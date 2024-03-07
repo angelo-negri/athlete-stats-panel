@@ -1,5 +1,6 @@
 import express, { Request, Response, Application } from "express";
 import dotenv from "dotenv";
+import { checkDBConnection } from "./src/utils/db.utils";
 
 //For env File
 dotenv.config();
@@ -13,4 +14,5 @@ app.get("/", (req: Request, res: Response) => {
 
 app.listen(port, () => {
   console.log(`Server is Fire at http://localhost:${port}`);
+  checkDBConnection();
 });
